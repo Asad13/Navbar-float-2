@@ -21,7 +21,7 @@
   --color-primary-light: #97feaf;
   --color-secondary: #fffd72;
   --color-complementary-dark: #b3464f;
-  --color-complementary-light: #ffa98a;
+  --color-complementary-light: #f8c2ae;
   /* Color Theme END */
 
   /* width,height,padding and Margin START */
@@ -40,11 +40,13 @@ a {
 
 /* ----- Header Styling START ----- */
 nav#topNav {
+  position: fixed;
   width: 100%;
   padding: 0 2rem;
-  padding: var(--page-padding-lg-screen);
+  padding: var(--page-padding-lg-screen, 0 2rem);
   background: #57b36d;
-  background: var(--color-primary-dark);
+  background: var(--color-primary-dark, #57b36d);
+  z-index: 10;
 }
 
 nav#topNav::after {
@@ -53,10 +55,90 @@ nav#topNav::after {
   clear: both;
 }
 
-@media only screen and (max-height: 768px) {
+.navbar-brand {
+  float: left;
+  line-height: 9vh;
+  line-height: var(--navbar-height, 9vh);
+}
+
+.navbar-brand a {
+  font-family: Anton, sans-serif;
+  font-family: var(--anton, Anton, sans-serif);
+  font-size: 1.5rem;
+  vertical-align: middle;
+  color: #fffd72;
+  color: var(--color-secondary, #fffd72);
+}
+
+.navbar-brand a:hover {
+  color: #f8c2ae;
+  color: var(--color-complementary-light, #f8c2ae);
+}
+
+ul.nav-menu {
+  list-style-type: none;
+}
+
+ul#navMenuPrimary {
+  margin: 0 auto;
+  width: fit-content;
+}
+
+ul#navMenuPrimary > li.nav-item {
+  float: left;
+}
+
+ul.nav-menu > li.nav-item > a.nav-link {
+  display: inline-block;
+  font-family: Teko, sans-serif;
+  font-family: var(--teko, Teko, sans-serif);
+  font-size: 1.3rem;
+  color: #ffffff;
+  color: var(--color-white, #ffffff);
+}
+
+ul.nav-menu > li.nav-item > a.nav-link:hover {
+  color: #fffd72;
+  color: var(--color-secondary, #fffd72);
+}
+
+ul#navMenuPrimary > li.nav-item > a.nav-link {
+  line-height: 9vh;
+  line-height: var(--navbar-height, 9vh);
+  padding: 0 2rem;
+  transition: all 350ms ease-in-out;
+}
+
+ul#navMenuPrimary > li.nav-item > a.nav-link:hover {
+  background: #b3464f;
+  background: var(--color-complementary-dark, #b3464f);
+}
+
+.signin {
+  float: right;
+  line-height: 9vh;
+  line-height: var(--navbar-height, 9vh);
+}
+
+.signin a {
+  vertical-align: middle;
+  font-family: NotoSerif, sans-serif;
+  font-family: var(--notoSerif, NotoSerif, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f0f0f;
+  color: var(--color-blackish, #0f0f0f);
+}
+
+.signin a:hover {
+  color: #fffd72;
+  color: var(--color-secondary, #fffd72);
+}
+
+@media only screen and (max-width: 768px) {
   nav#topNav {
     padding: 0 1rem;
-    padding: var(--page-padding-sm-screen);
+    padding: var(--page-padding-sm-screen, 0 1rem);
   }
 }
 /* ----- Header Styling END ----- */
