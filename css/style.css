@@ -1,0 +1,62 @@
+@import url("./fonts.css");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ----- Global Variables START ----- */
+:root {
+  /* Fonts START */
+  --anton: Anton, sans-serif;
+  --notoSerif: NotoSerif, sans-serif;
+  --teko: Teko, sans-serif;
+  /* Fonts END */
+
+  /* Color Theme START */
+  --color-blackish: #0f0f0f;
+  --color-white: #ffffff;
+  --color-primary-dark: #57b36d;
+  --color-primary-light: #97feaf;
+  --color-secondary: #fffd72;
+  --color-complementary-dark: #b3464f;
+  --color-complementary-light: #ffa98a;
+  /* Color Theme END */
+
+  /* width,height,padding and Margin START */
+  --page-padding-lg-screen: 0 2rem;
+  --page-padding-sm-screen: 0 1rem;
+  --navbar-height: 9vh;
+  /* width,height,padding and Margin END */
+}
+/* ----- Global Variables END ----- */
+
+/* ----- Global Styles START ----- */
+a {
+  text-decoration: none;
+}
+/* ----- Global Styles END ----- */
+
+/* ----- Header Styling START ----- */
+nav#topNav {
+  width: 100%;
+  padding: 0 2rem;
+  padding: var(--page-padding-lg-screen);
+  background: #57b36d;
+  background: var(--color-primary-dark);
+}
+
+nav#topNav::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media only screen and (max-height: 768px) {
+  nav#topNav {
+    padding: 0 1rem;
+    padding: var(--page-padding-sm-screen);
+  }
+}
+/* ----- Header Styling END ----- */
